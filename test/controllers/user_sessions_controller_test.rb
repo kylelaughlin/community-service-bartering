@@ -12,8 +12,10 @@ class UserSessionsControllerTest < ActionController::TestCase
   end
 
   test "should get destroy" do
+    @user = users(:default_user)
+    login_user(user=@user, route=login_path)
     get :destroy
-    assert_response :success
+    assert_redirected_to users_path
   end
 
 end
