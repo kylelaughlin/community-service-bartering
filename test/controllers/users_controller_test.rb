@@ -25,4 +25,11 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get update" do
+    @user = users(:default_user)
+    login_user(user=@user, route=login_path)
+    patch :update, id: @user.id, user: {email: "test@test.com"}
+    assert_redirected_to user_path(@user.id)
+  end
+
 end
