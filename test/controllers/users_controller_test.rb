@@ -7,7 +7,9 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    @user = users(:default_user)
+    login_user(user=@user, route=login_path)
+    get :show, {"id" => @user.id}
     assert_response :success
   end
 
@@ -17,7 +19,9 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit
+    @user = users(:default_user)
+    login_user(user=@user, route=login_path)
+    get :edit, {"id" => @user.id}
     assert_response :success
   end
 
