@@ -1,3 +1,67 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: top;
+  background-image: image-url("cover.jpg");
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  height: 100vh;
+  z-index: -10;
+}
+
+.header-phrase {
+  font-size: 4em;
+  margin-top: 100px;
+  font-weight: bold;
+}
+
+.about-section {
+  background-color: #097054;
+  color: #FFF;
+  padding: 100px 0px 60px 0px;
+}
+
+.about-header {
+  font-size: 3em;
+}
+
+.about-text {
+  font-size: 1.3em;
+  padding: 30px 8% 40px 8%;
+}
+
+.description-item {
+  width: 250px;
+  margin:  5px 90px 5px 90px;
+}
+
+.description-image {
+  width: 80%;
+}
+
+.call-to-action {
+  margin-top: 50px;
+  font-weight: lighter;
+  font-size: 3em;
+}
+
+hr.green {
+  border-color: #097054;
+  width: 100px;
+  border-width: 5px;
+}
+
+.signup-section {
+  background-color: #FFDE00;
+  color: #FFF;
+  padding: 100px 0px 200px 0px;
+}

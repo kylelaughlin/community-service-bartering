@@ -8,46 +8,57 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">AwesomeBrand</a>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+        <li><%= link_to "About", "#about"%></li>
+        <li><%= link_to "Services", "#description"%></li>
+        <li><%= link_to "Sign Up", "#signup"%></li>
+        <li><%= link_to "Login", :login%></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<header>
+  <div class="header-content-wrapper">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h1 class="header-phrase">Need help with that project? Let your neightbors help.</h1>
+        <%= link_to "Learn More", "#about", class: "btn btn-green" %>
+      </div>
+    </div>
+  </div>
+</header>
+<section name="about" id="about" class="text-center about-section">
+  <h2 class="about-header">Trade your services, no money, just help.</h2>
+  <p class="about-text">Every hour you help someone else earns you an hour of help from someone else.
+    People helping people without the need to exchange money, making the community
+    stronger and self reliant.</p>
+  <%= link_to "Sign Up", new_user_path, class: "btn btn-white" %>
+</section>
+<section name="description" id="description" class="text-center">
+  <h2 class="call-to-action">How can you pitch in?</h2>
+  <hr class="green">
+  <div class=flex-container>
+    <div class="description-item text-center">
+      <%= image_tag"machine.png", :alt => "lawn mower icon", class: "description-image" %>
+      <h2>Lawn Services</h3>
+    </div>
+    <div class="description-item text-center">
+      <%= image_tag"shovel.png", :alt => "shovel icon", class: "description-image" %>
+      <h2>Manual Labor</h3>
+    </div>
+    <div class="description-item text-center">
+      <%= image_tag"computer.png", :alt => "computer icon", class: "description-image" %>
+      <h2>Tech Problems</h2>
+    </div>
+  </div>
+  <h3 class="lighter-font">Give an hour and recieve credit to recieve one hour of help. No cash, no hassle.</h3>
+  <h3 class="lighter-font">Have a different skill? Offer it up. You never know who might need you.</h3>
+</section>
+<section name="signup" id="signup" class="text-center signup-section">
+  <h2>Ready to get started?  Sign up here.</h2>
+  <%= link_to "Sign Up", new_user_path, class: "btn btn-green" %>
+</section>

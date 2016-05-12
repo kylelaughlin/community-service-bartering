@@ -16,3 +16,41 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  color: #444540;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.btn {
+  padding: 5px 30px 5px 30px;
+  border-radius: 30px;
+  font-size: 2em;
+}
+
+.btn-green {
+  background-color: #097054;
+  color: #FFF;
+}
+
+.btn-white {
+  background-color: #FFF;
+  color: #097054;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.full-width {
+  width: 100%;
+}
+
+.lighter-font {
+  font-weight: lighter;
+}
