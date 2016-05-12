@@ -2,14 +2,18 @@
 #
 # Table name: users
 #
-#  id               :integer          not null, primary key
-#  email            :string           not null
-#  crypted_password :string
-#  salt             :string
-#  created_at       :datetime
-#  updated_at       :datetime
-#  first_name       :string           not null
-#  last_name        :string           not null
+#  id                  :integer          not null, primary key
+#  email               :string           not null
+#  crypted_password    :string
+#  salt                :string
+#  created_at          :datetime
+#  updated_at          :datetime
+#  first_name          :string           not null
+#  last_name           :string           not null
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 # Indexes
 #
@@ -28,4 +32,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
 
   has_many :requests
+
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 end

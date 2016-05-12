@@ -26,6 +26,8 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, class: "form-control" %>
   </fieldset>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar%>
   <div>
     <%= f.submit "Create User", class: "btn btn-blue" %>
   </div>

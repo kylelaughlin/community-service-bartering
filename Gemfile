@@ -24,7 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sorcery'
 # Bootstrap sass
 gem 'bootstrap-sass', '~> 3.3.6'
-
+# Paper clip to upload images
+gem "paperclip", "~> 4.2"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
