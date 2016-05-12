@@ -23,6 +23,16 @@ body {
 
 .navbar {
   margin-bottom: 0px;
+  background-color: #097054;
+  border-style: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
 }
 
 .btn {
@@ -33,6 +43,11 @@ body {
 
 .btn-green {
   background-color: #097054;
+  color: #FFF;
+}
+
+.btn-blue {
+  background-color: #6599FF;
   color: #FFF;
 }
 
@@ -53,4 +68,9 @@ body {
 
 .lighter-font {
   font-weight: lighter;
+}
+
+.form-wrapper {
+  margin: auto;
+  width: 400px;
 }

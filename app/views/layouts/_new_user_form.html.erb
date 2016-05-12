@@ -6,27 +6,27 @@
       <% end %>
     </ul>
   <% end %>
-  <div>
+  <fieldset class="form-group">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-  <div>
+    <%= f.text_field :first_name, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
     <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-  <div>
+    <%= f.text_field :last_name, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div>
+    <%= f.text_field :email, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
     <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
+    <%= f.password_field :password, class: "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+  </fieldset>
   <div>
-    <%= f.submit %>
+    <%= f.submit "Create User", class: "btn btn-blue" %>
   </div>
 <% end %>
