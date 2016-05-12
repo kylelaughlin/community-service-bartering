@@ -8,6 +8,8 @@
 #  salt             :string
 #  created_at       :datetime
 #  updated_at       :datetime
+#  first_name       :string           not null
+#  last_name        :string           not null
 #
 # Indexes
 #
@@ -22,6 +24,8 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   has_many :requests
 end

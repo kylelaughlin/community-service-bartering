@@ -8,8 +8,12 @@ default_user:
   email: "default_user@example.com"
   salt: <%= salt = "asdasdastr4325234324sdfds" %>
   crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>
+  first_name: "Kyle"
+  last_name: "Laughlin"
 
 default_user_two:
   email: "default_user_two@example.com"
   salt: <%= salt = "asdasdastr4325234324sdfgh" %>
   crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("secret", salt) %>
+  first_name: "Andrea"
+  last_name: "Dier"
