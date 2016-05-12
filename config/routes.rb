@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'requests/new'
-
-  get 'requests/show'
-
-  get 'requests/index'
-
-  get 'requests/edit'
-
-  root :to => 'users#index'
+  root :to => 'static_pages#home'
 
   resources :user_sessions
   resources :users
