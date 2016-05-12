@@ -1,10 +1,7 @@
 require 'test_helper'
 
 class RequestTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-
+  
   test "request object valid upon normal creation" do
     @request = Request.new(title: "Example Title", description: "Need work done on house",
                             user_id: 1)
