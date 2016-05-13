@@ -1,0 +1,18 @@
+<div class="request-summary">
+  <div class="row">
+    <div class="col-xs-9">
+      <h3><%=request.title%></h3>
+    </div>
+    <div class="col-xs-3">
+      <h5 class="text-right post-date">Posted on: <%=request.created_at.strftime("%m-%d-%Y")%></h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <p><%=truncate(request.description, length: 200)%></p>
+    </div>
+    <div class="col-sm-4">
+      <p>image</p>
+    </div>
+  </div>
+</div>
