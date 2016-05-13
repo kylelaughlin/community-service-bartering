@@ -15,7 +15,7 @@ class UserSessionsControllerTest < ActionController::TestCase
     @user = users(:default_user)
     login_user(user=@user, route=login_path)
     get :destroy
-    assert_redirected_to users_path
+    assert_redirected_to root_path
   end
 
 end
