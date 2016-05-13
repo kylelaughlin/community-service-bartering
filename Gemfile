@@ -27,7 +27,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Paper clip to upload images
 gem "paperclip", "~> 4.2"
 # AWS for image storage
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '< 2.0'
 # Figaro Handling ENV variables
 gem 'figaro'
 # Use ActiveModel has_secure_password
