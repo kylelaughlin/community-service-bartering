@@ -1,0 +1,20 @@
+<div class="bio-container">
+  <%= image_tag @user.avatar.url(:medium), class: "bio-image" %>
+  <div class="bio-top"></div>
+  <h3 class="bio-name"><%=@user.first_name%> <%=@user.last_name%></h3>
+  <h6 class="bio-name"><%=@user.email%></h6>
+  <div class="row">
+    <div class="col-xs-3 text-center bio-stats">
+      <h4>Requests</h4>
+      <h3><%=@user.requests.count%></h3>
+    </div>
+    <div class="col-xs-4 text-center bio-stats">
+      <h4>Open Bids</h4>
+      <h3><%=@user.requests.count%></h3>
+    </div>
+    <div class="col-xs-5 text-center bio-stats">
+      <h4>Accepted Bids</h4>
+      <h3><%=@user.requests.count%></h3>
+    </div>
+  </div>
+</div>
