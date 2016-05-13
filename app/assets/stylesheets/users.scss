@@ -4,20 +4,20 @@
 
 .bio-container {
   width: 100%;
-  height: 275px;
+  min-height: 275px;
   background-color: #F5F8FA;
   border-style: solid;
   border-color: #097054;
   border-width: thin;
   margin: 20px 0px 20px 0px;
-  border-radius: 8px;
+  border-radius: 5px;
   overflow: hidden;
   position: relative;
 }
 
 .bio-top {
   width: 100%;
-  height: 45%;
+  height: 125px;
   margin: 0;
   background-color: #097054;
 }
@@ -42,5 +42,20 @@
 }
 
 .bio-stats {
-  margin: 10px 10px 5px 10px;
+  padding: 0px 5px 0px 5px;
+}
+
+.requests-wrapper {
+  border-style: solid;
+  border-color: #097054;
+  border-width: thin;
+  border-radius: 5px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.requests-header {
+  background-color: #F5F8FA;
+  color: #097054;
+  padding: 10px 0px 10px 0px;
 }

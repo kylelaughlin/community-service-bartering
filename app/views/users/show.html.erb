@@ -1,28 +1,34 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-
-      <div class="bio-container">
-        <%= image_tag @user.avatar.url(:medium), class: "bio-image" %>
-        <div class="bio-top"></div>
-        <h3 class="bio-name"><%=@user.first_name%> <%=@user.last_name%></h3>
-        <h6 class="bio-name"><%=@user.email%></h6>
-        <div class="flex-container">
-          <div class="text-center bio-stats">
-            <h4>Requests</h4>
-            <h3><%=@user.requests.count%></h3>
-          </div>
-          <div class="text-center bio-stats">
-            <h4>Open Bids</h4>
-            <h3><%=@user.requests.count%></h3>
-          </div>
-          <div class="text-center bio-stats">
-            <h4>Accepted Bids</h4>
-            <h3><%=@user.requests.count%></h3>
-          </div>
+      <%= render "layouts/user_bio", :@user => @user %>
+    </div>
+    <div class="col-md-8">
+      <div class="requests-wrapper">
+        <div class="requests-header text-center">
+          <h2 class="no-spacing">Open Requests</h2>
         </div>
+        <% @requests.each do |request| %>
+          <div class="request-summary">
+            <div class="row">
+              <div class="col-xs-9">
+                <h3><%=request.title%></h3>
+              </div>
+              <div class="col-xs-3">
+                <h5 class="text-right post-date">Posted on: <%=request.created_at.strftime("%m-%d-%Y")%></h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+                <p><%=truncate(request.description, length: 200)%></p>
+              </div>
+              <div class="col-sm-4">
+                <p>image</p>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-
     </div>
   </div>
 </div>

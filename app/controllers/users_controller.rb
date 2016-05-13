@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @requests = Request.where(user: @user)
     user_allowed?
   end
 
