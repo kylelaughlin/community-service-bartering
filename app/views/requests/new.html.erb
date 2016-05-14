@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Register a new user</h2>
-    <%= form_for @request do |f| %>
+    <%= form_for @request, :html => {:multipart => :true } do |f| %>
       <% if f.object.errors.any? %>
         <ul>
           <% f.object.errors.full_messages.each do |e| %>
@@ -17,6 +17,7 @@
         <%= f.label :description %>
         <%= f.text_area :description, class: "form-control" %>
       </fieldset>
+      <input type="file" name="images[]" multiple="multiple"><br/>
       <div>
         <%= f.submit "Create User", class: "btn btn-blue" %>
       </div>

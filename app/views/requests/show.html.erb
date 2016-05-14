@@ -1,2 +1,5 @@
 <h1>Requests#show</h1>
 <p>Find me in app/views/requests/show.html.erb</p>
+<% @images.each do |i| %>
+<%= image_tag i.image.url(:medium) %>
+  <% end %>

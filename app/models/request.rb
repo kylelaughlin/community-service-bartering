@@ -12,6 +12,10 @@
 #  completed          :boolean          default(FALSE)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class Request < ActiveRecord::Base
@@ -20,4 +24,8 @@ class Request < ActiveRecord::Base
   validates :user_id, presence: true
 
   belongs_to :user
+
+  has_many :request_images, :dependent => :destroy
+
+  accepts_nested_attributes_for :request_images, :reject_if => lambda { |t| t['request_image'].nil? }
 end
