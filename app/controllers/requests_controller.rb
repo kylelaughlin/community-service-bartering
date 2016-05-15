@@ -1,11 +1,13 @@
 class RequestsController < ApplicationController
+
+  skip_before_action :require_login, only: [:show]
+
   def new
     @request = Request.new
-    3.times {@request.request_images.build}
+    user_allowed?
   end
 
   def create
-    byebug
     @request = Request.new(request_params)
     if @request.save
       if params[:images]
@@ -22,6 +24,7 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @user = @request.user
     @images = @request.request_images
   end
 
@@ -30,8 +33,9 @@ class RequestsController < ApplicationController
   end
 
   def edit
-    @request.Request.find[:id]
-    3.times {@request.request_images.build}
+    @request = Request.find(params[:id])
+    @user = @request.user
+    user_allowed?
   end
 
   private

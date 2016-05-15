@@ -1,5 +1,20 @@
-<h1>Requests#show</h1>
-<p>Find me in app/views/requests/show.html.erb</p>
-<% @images.each do |i| %>
-<%= image_tag i.image.url(:medium) %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "layouts/author_summary", :@user => @user %>
+    </div>
+    <div class="col-md-7">
+      <%= render "layouts/request_show", :@request => @request, :@images => @images %>
+    </div>
+    <div class="col-md-2 text-center">
+      <% if @user != current_user %>
+        <h3>Can you help?</h3>
+        <%= link_to "Make Offer", "#", class: "btn btn-blue" %>
+      <% else %>
+        <div class="grey-wrapper">
+          <%= link_to "Edit request", edit_request_path(@request) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
