@@ -1,2 +1,29 @@
-<h1>Requests#edit</h1>
-<p>Find me in app/views/requests/edit.html.erb</p>
+<div class="container">
+  <h1>Edit Request</h1>
+  <%= form_for @request, :html => {:multipart => :true } do |f| %>
+    <% if f.object.errors.any? %>
+      <ul>
+        <% f.object.errors.full_messages.each do |e| %>
+          <li><%= e %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <fieldset class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control", rows: 10 %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= label_tag :images, "Add Addition Images" %>
+      <%= file_field_tag "images[]", multiple: "multiple", id: "images" %>
+    </fieldset>
+    <div>
+      <%= f.submit "Update Request", class: "btn btn-blue" %>
+    </div>
+  <% end %>
+  <%= link_to "Delete Request", request_path(@request.id), method: :delete %>
+</div>

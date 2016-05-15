@@ -1,28 +1,28 @@
 <div class="container">
   <h2>Create a new request</h2>
-    <%= form_for @request, :html => {:multipart => :true } do |f| %>
-      <% if f.object.errors.any? %>
-        <ul>
-          <% f.object.errors.full_messages.each do |e| %>
-            <li><%= e %></li>
-          <% end %>
-        </ul>
-      <% end %>
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-      <fieldset class="form-group">
-        <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control" %>
-      </fieldset>
-      <fieldset class="form-group">
-        <%= f.label :description %>
-        <%= f.text_area :description, class: "form-control", rows: 10 %>
-      </fieldset>
-      <fieldset class="form-group">
-        <%= label_tag :images %>
-        <%= file_field_tag "images[]", multiple: "multiple", id: "images" %>
-      </fieldset>
-      <div>
-        <%= f.submit "Create Request", class: "btn btn-blue" %>
-      </div>
+  <%= form_for @request, :html => {:multipart => :true } do |f| %>
+    <% if f.object.errors.any? %>
+      <ul>
+        <% f.object.errors.full_messages.each do |e| %>
+          <li><%= e %></li>
+        <% end %>
+      </ul>
     <% end %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <fieldset class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control", rows: 10 %>
+    </fieldset>
+    <fieldset class="form-group">
+      <%= label_tag :images %>
+      <%= file_field_tag "images[]", multiple: "multiple", id: "images" %>
+    </fieldset>
+    <div>
+      <%= f.submit "Create Request", class: "btn btn-blue" %>
+    </div>
+  <% end %>
 </div>

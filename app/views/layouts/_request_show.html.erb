@@ -1,7 +1,7 @@
 <div class="thin-border-wrapper padding-5">
   <h3><%= @request.title %></h3>
   <p>Posted on: <%=@request.created_at.strftime("%m-%d-%Y")%></p>
-  <p><%= @request.description %></p>
+  <p><%= simple_format(@request.description) %></p>
   <div class="flex-container">
     <% @images.each do |i| %>
       <%= image_tag i.image.url(:medium), class: "padding-5" %>
