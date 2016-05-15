@@ -29,4 +29,12 @@ class RequestsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get update" do
+    @default_request = requests(:default_request)
+    @user = users(:default_user)
+    login_user(user=@user, route=login_path)
+    patch :update, id: @default_request.id, request: {title: "New Title"}
+    assert_redirected_to request_path(@default_request.id)
+  end
+
 end
