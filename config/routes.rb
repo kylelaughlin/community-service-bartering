@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'offers/new'
-
-  get 'offers/index'
-
-  get 'offers/show'
-
-  get 'offers/edit'
-
   root :to => 'static_pages#home'
 
   resources :user_sessions
