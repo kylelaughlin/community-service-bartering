@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'offers/new'
+
+  get 'offers/index'
+
+  get 'offers/show'
+
+  get 'offers/edit'
+
   root :to => 'static_pages#home'
 
   resources :user_sessions
   resources :users
   resources :requests
+  resources :offers
 
   get "login" => "user_sessions#new", :as => :login
   get "logout" => "user_sessions#destroy", :as => :logout
