@@ -1,13 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
+default_request:
+  title: Example Request Title
+  description: Description of request and other information
   user_id: 1
   accepted_bid_id: 1
   advertised_credits: 1
   accepted_credits: 1
   completed: false
+  user: default_user
 
 two:
   title: MyString
