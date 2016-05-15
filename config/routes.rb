@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   resources :user_sessions
   resources :users
-  resources :requests
-  resources :offers
+  resources :requests do
+    resources :offers
+  end
+
 
   get "login" => "user_sessions#new", :as => :login
   get "logout" => "user_sessions#destroy", :as => :logout

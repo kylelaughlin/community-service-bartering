@@ -9,7 +9,7 @@
     <div class="col-md-2 text-center">
       <% if @user != current_user %>
         <h3>Can you help?</h3>
-        <%= link_to "Make Offer", "#", class: "btn btn-blue" %>
+        <%= link_to "Make Offer", new_request_offer_path(@request), class: "btn btn-blue" %>
       <% else %>
         <div class="grey-wrapper">
           <%= link_to "Edit request", edit_request_path(@request) %>
