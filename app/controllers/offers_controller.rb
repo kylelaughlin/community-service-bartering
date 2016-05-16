@@ -56,7 +56,6 @@ class OffersController < ApplicationController
     @user = @request.user
     user_allowed?
     if @user.credit_check(@offer.proposed_hours)
-      byebug
       @offer.accepted_offer(@request)
       redirect_to request_path(@request), notice: "Offer Accepted"
     else

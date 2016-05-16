@@ -10,6 +10,7 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  accepted       :boolean          default(FALSE)
+#  completed      :boolean          default(FALSE)
 #
 
 class Offer < ActiveRecord::Base
