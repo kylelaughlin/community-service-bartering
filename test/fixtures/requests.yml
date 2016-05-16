@@ -4,7 +4,7 @@ default_request:
   title: Example Request Title
   description: Description of request and other information
   user_id: 1
-  accepted_offer_id: 1
+  accepted_offer_id: 987654321
   advertised_credits: 1
   accepted_credits: 1
   completed: false

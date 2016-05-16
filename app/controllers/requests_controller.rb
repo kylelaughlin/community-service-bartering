@@ -26,6 +26,7 @@ class RequestsController < ApplicationController
     @user = @request.user
     @images = @request.request_images
     if @request.accepted_offer_id
+      byebug
       @offer= Offer.find(@request.accepted_offer_id)
       @offer_user = @offer.user
     end
