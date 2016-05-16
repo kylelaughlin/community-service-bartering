@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root :to => 'static_pages#home'
 
   resources :user_sessions
-  resources :users
+  resources :users do
+    resources :rating, only: [:new, :create]
+  end
   resources :requests do
     resources :offers
   end
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
 
   get "accepted_offer" => "offers#accepted", :as => :accepted_offer
   get "completed_request" => "requests#completed", :as => :completed_request
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

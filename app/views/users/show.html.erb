@@ -23,7 +23,6 @@
             <%= link_to "New Request", new_request_path, class: "btn btn-blue" %>
           </div>
         </div>
-
         <% @requests.each do |request| %>
           <%= render "layouts/request_summary", :request => request %>
         <% end %>
