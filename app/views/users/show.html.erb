@@ -1,9 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <%= render "layouts/user_bio", :@user => @user %>
+      <%= render "layouts/user_bio", :@user => @user, :@offers => @offers %>
       <div class="thin-border-wrapper padding-5">
         <h3>Time Credits Available: <%=@user.credits%></h3>
+      </div>
+      <div class="thin-border-wrapper padding-5">
+        <% @offers.each do |o| %>
+          <h5><%= link_to o.request.title, request_offer_path(o.request, o) %></h5>
+        <% end %>
       </div>
     </div>
     <div class="col-md-8">

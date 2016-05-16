@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @requests = Request.where(user: @user)
+    @offers = Offer.where(user: @user, completed: false).includes(:request)
     user_allowed?
   end
 

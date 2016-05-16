@@ -24,6 +24,7 @@ class RequestsController < ApplicationController
   def show
     @request = Request.find(params[:id])
     @user = @request.user
+    @offers = Offer.where(request_id: @request.id)
     @images = @request.request_images
     if @request.accepted_offer_id
       byebug
