@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
 
   has_many :requests
+  has_many :offers
 
   # Attached file through paperclip with AWS S3 storage
   has_attached_file :avatar,

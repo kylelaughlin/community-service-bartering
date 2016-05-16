@@ -18,4 +18,5 @@ class Offer < ActiveRecord::Base
   validates :request_id, presence: true
 
   belongs_to :request
+  belongs_to :user
 end

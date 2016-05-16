@@ -24,9 +24,7 @@ class Request < ActiveRecord::Base
   validates :user_id, presence: true
 
   belongs_to :user
-
   has_many :request_images, :dependent => :destroy
-
   has_many :offers, :dependent => :destroy
 
   accepts_nested_attributes_for :request_images, :reject_if => lambda { |t| t['request_image'].nil? }
