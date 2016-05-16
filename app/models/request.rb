@@ -6,9 +6,9 @@
 #  title              :string           not null
 #  description        :text             not null
 #  user_id            :integer          not null
-#  accepted_bid_id    :integer
+#  accepted_offer_id  :integer
 #  advertised_credits :integer
-#  accepted_credits   :integer
+#  accepted_credits   :decimal(16, 2)
 #  completed          :boolean          default(FALSE)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null

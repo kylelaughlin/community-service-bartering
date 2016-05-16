@@ -21,7 +21,15 @@ class Offer < ActiveRecord::Base
   belongs_to :request
   belongs_to :user
 
-  def accepted_offer(request_user)
-    accepted = true
+  # Updates fields when offer is accepted
+  #
+  # +request: a Request Object representing the request for which a bid was accepted
+  def accepted_offer(request)
+    byebug
+    self.accepted = true
+    request.accepted_offer_id = self.id
+    request.accepted_credits = self.proposed_hours
+    self.save
+    request.save
   end
 end

@@ -56,7 +56,14 @@ class OffersController < ApplicationController
     @user = @request.user
     user_allowed?
     if @user.credit_check(@offer.proposed_hours)
-      @offer.accepted_offer(@user)
+      byebug
+      @offer.accepted_offer(@request)
+      redirect_to request_path(@request), notice: "Offer Accepted"
+    else
+      flash.now[:alert] = "Not enough hour credits to accept this bid"
+      @user = User.find(@offer.user_id)
+      render :show
+    end
 
   end
 
