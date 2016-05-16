@@ -28,6 +28,8 @@ class OffersController < ApplicationController
   def edit
     @request = Request.find(params[:request_id])
     @offer = Offer.find(params[:id])
+    @user = @offer.user
+    user_allowed?
   end
 
   def update
