@@ -40,10 +40,8 @@ class Request < ActiveRecord::Base
     current_user.save
     offer.completed = true
     offer.save
-    byebug
     offer_user.credits += self.accepted_credits
     offer_user.save
-
   end
 
 end

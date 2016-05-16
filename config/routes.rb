@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :user_sessions
   resources :users do
-    resources :rating, only: [:new, :create]
+    resources :ratings, only: [:new, :create]
   end
   resources :requests do
     resources :offers

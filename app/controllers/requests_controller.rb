@@ -68,7 +68,7 @@ class RequestsController < ApplicationController
     @offer = Offer.find(@request.accepted_offer_id)
     @offer_user = @offer.user
     @request.completed_request(@offer, @offer_user, current_user)
-    redirect_to user_path(current_user), notice: "Request Completed"
+    redirect_to new_user_rating_path(current_user), notice: "Request Completed"
   end
 
   private
