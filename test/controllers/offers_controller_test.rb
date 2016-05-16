@@ -10,9 +10,8 @@ class OffersControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    @user = users(:default_user)
-    login_user(user=@user, route=login_path)
     @default_request = requests(:default_request)
+    @default_offer = offers(:default_offer)
     get :index, :request_id => @default_request.id
     assert_response :success
   end

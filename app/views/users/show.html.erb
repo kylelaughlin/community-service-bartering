@@ -7,18 +7,23 @@
       </div>
       <div class="thin-border-wrapper padding-5">
         <% @offers.each do |o| %>
-          <h5><%= link_to o.request.title, request_offer_path(o.request, o) %></h5>
+          <h3>My Open Offers</h3>
+          <h4><%= link_to "#{o.request.title} #{o.created_at.strftime("%m-%d-%Y")}",
+                  request_offer_path(o.request, o) %>
+          <p class="accepted"><%= "Accepted" if o.accepted %></p>
+          </h4>
         <% end %>
       </div>
     </div>
     <div class="col-md-8">
       <div class="thin-border-wrapper">
         <div class="requests-header text-center">
-          <h2 class="no-spacing">Open Requests</h2>
+          <h2 class="no-spacing b-m-5">Open Requests</h2>
+          <div class="text-center">
+            <%= link_to "New Request", new_request_path, class: "btn btn-blue" %>
+          </div>
         </div>
-        <div class="text-center">
-          <%= link_to "New Request", new_request_path, class: "btn btn-blue" %>
-        </div>
+
         <% @requests.each do |request| %>
           <%= render "layouts/request_summary", :request => request %>
         <% end %>

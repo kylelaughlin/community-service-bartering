@@ -1,4 +1,7 @@
 class OffersController < ApplicationController
+
+skip_before_action :require_login, only: [:index]
+
   def new
     @offer = Offer.new
     @request = Request.find(params[:request_id])

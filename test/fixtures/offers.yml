@@ -7,6 +7,7 @@ default_offer:
   user_id: 1
   request_id: 1
   user: default_user
+  request: default_request
 
 two:
   explanation: MyText
