@@ -25,6 +25,8 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @user = @request.user
     @images = @request.request_images
+    @offer= Offer.find(@request.accepted_offer_id)
+    @offer_user = @offer.user
   end
 
   def index
@@ -56,6 +58,14 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.destroy
     redirect_to user_path(current_user.id)
+  end
+
+  def completed
+    @request = Request.find(params[:id])
+    @offer = Offer.find(@request.accepted_offer_id)
+    @offer_user = @offer.user
+    @request.completed_request(@offer, @offer_user, current_user)
+    redirect_to user_path(current_user), notice: "Request Completed"
   end
 
   private

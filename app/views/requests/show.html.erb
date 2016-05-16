@@ -4,6 +4,15 @@
       <%= render "layouts/author_summary", :@user => @user %>
     </div>
     <div class="col-md-7">
+
+      <% if !@request.accepted_offer_id.nil? && @user == current_user %>
+        <div class="grey-wrapper padding-5 text-center">
+          <h2>Accepted Offer from <%=@offer_user.first_name %></h2>
+          <h4>Is the work done?</h4>
+          <%= link_to "Yes, #{@offer_user.first_name} completed the request", completed_request_path(:id => @request.id)%>
+        </div>
+      <% end %>
+
       <%= render "layouts/request_show", :@request => @request, :@images => @images %>
     </div>
     <div class="col-md-2 text-center">

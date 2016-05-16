@@ -28,4 +28,20 @@ class Request < ActiveRecord::Base
   has_many :offers, :dependent => :destroy
 
   accepts_nested_attributes_for :request_images, :reject_if => lambda { |t| t['request_image'].nil? }
+
+  # Facilitates the updating of records upon request completion
+  #
+  # +offer: an Offer object representing the offer that was accepted and completed
+  # +offer_user: a User object representing the user who's offer was accepted and completed
+  def completed_request(offer, offer_user, current_user)
+    self.completed = true
+    self.save
+    current_user.credits -= self.accepted_credits
+    current_user.save
+    offer.completed = true
+    offer.save
+    offer_user.credits += self.accepted_credits
+    offer_user.save
+  end
+
 end
