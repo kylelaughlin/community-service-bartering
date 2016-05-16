@@ -20,4 +20,8 @@ class Offer < ActiveRecord::Base
 
   belongs_to :request
   belongs_to :user
+
+  def accepted_offer(request_user)
+    accepted = true
+  end
 end

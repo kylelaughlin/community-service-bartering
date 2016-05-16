@@ -50,6 +50,16 @@ class OffersController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def accepted
+    @request = Request.find(params[:request_id])
+    @offer = Offer.find(params[:id])
+    @user = @request.user
+    user_allowed?
+    if @user.credit_check(@offer.proposed_hours)
+      @offer.accepted_offer(@user)
+
+  end
+
   private
 
   def offer_params

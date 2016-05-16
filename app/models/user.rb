@@ -14,6 +14,7 @@
 #  avatar_content_type :string
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
+#  credits             :decimal(, )      default(0.0)
 #
 # Indexes
 #
@@ -47,4 +48,8 @@ class User < ActiveRecord::Base
                     bucket: ENV["S3_BUCKET_NAME"]
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  def credit_check(proposed_hours)
+    credits >= proposed_hours
+  end
 end

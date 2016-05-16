@@ -20,7 +20,7 @@
         </div>
       <% else %>
         <% if @request.user == current_user && @request.accepted_bid_id.nil? %>
-          <%= link_to "Accept This Bid", edit_request_offer_path(@request, @offer), class: "btn btn-blue" %>
+          <%= link_to "Accept This Bid", accepted_offer_path(:request_id => @request.id,:id => @offer.id), class: "btn btn-blue" %>
         <% else %>
           <h3>Another bid had already been accepted for this request.</h3>
         <% end %>
