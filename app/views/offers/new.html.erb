@@ -1,8 +1,5 @@
 <div class="container">
   <h1>New Offer</h1>
-  <div class="thin-border-wrapper set-in">
-    <h3>Request: <%=@request.title%></h3>
-    <p><%= @request.description %>
-  </div>
+  <%= render "layouts/request_title_description", :@request => @request %>
   <%= render "layouts/new_offer_form" %>
 </div>

@@ -1,4 +1,4 @@
-<%= form_for ([:request, @offer]) do |f| %>
+<%= form_for ([@request, @offer]) do |f| %>
   <% if f.object.errors.any? %>
     <ul>
       <% f.object.errors.full_messages.each do |e| %>
@@ -16,6 +16,6 @@
     <%= f.number_field :proposed_hours, class: "form-control", min: 0, :step => 'any' %>
   </fieldset>
   <div>
-    <%= f.submit "Make Offer", class: "btn btn-blue" %>
+    <%= f.submit ( f.object.new_record? ? "Create Offer" : "Update Offer"), class: "btn btn-blue" %>
   </div>
 <% end %>

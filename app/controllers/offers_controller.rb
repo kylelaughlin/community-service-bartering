@@ -19,15 +19,39 @@ class OffersController < ApplicationController
   end
 
   def show
+    @request = Request.find(params[:request_id])
+    @offer = Offer.find(params[:id])
+    @user = User.find(@offer.user_id)
+    offer_permission?
   end
 
   def edit
+    @request = Request.find(params[:request_id])
+    @offer = Offer.find(params[:id])
+  end
+
+  def update
+    @request = Request.find(params[:request_id])
+    @offer = Offer.find(params[:id])
+    if @offer.update_attributes(offer_params)
+      redirect_to request_offer_path(@request, @offer), notice: "Offer Updated Successfully"
+    else
+      flash.now[:alert] = "Offer Not Updated"
+      render :edit
+    end
+  end
+
+  def destroy
+    @request = Request.find(params[:request_id])
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private
 
   def offer_params
-    params.require(:offer).permit(:proposed_hours, :user_id)
+    params.require(:offer).permit(:proposed_hours, :explanation, :user_id)
   end
 
 end

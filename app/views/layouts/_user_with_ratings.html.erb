@@ -1,0 +1,9 @@
+<div class="row padding-5">
+  <div class="col-xs-3">
+    <%= image_tag @user.avatar.url(:thumb), class: "request-user-image" %>
+  </div>
+  <div class="col-xs-9">
+    <%= link_to "#{@user.first_name}", user_path(@user.id), class: "link-large"%>
+    <p>Ratings</p>
+  </div>
+</div>

@@ -1,2 +1,31 @@
-<h1>Offers#show</h1>
-<p>Find me in app/views/offers/show.html.erb</p>
+<div class="container">
+  <h1>Offer on Request: <%=@request.title%></h1>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-xs-8 col-sm-10 col-md-4">
+          <%= render "layouts/user_with_ratings", :@user => @user %>
+        </div>
+      </div>
+      <p> Offered on: <%=@offer.created_at.strftime("%m-%d-%Y")%></p>
+      <h4>Offer Comments</h4>
+      <p><%=simple_format(@offer.explanation)%></p>
+      <h4>Proposed Hours: <%=@offer.proposed_hours%></h4>
+      <%= render "layouts/request_title_description", :@request => @request %>
+    </div>
+    <div class="col-md-3 text-center">
+      <% if @user == current_user %>
+        <div class="grey-wrapper">
+          <%= link_to "Edit Offer", edit_request_offer_path(@request, @offer) %>
+        </div>
+      <% else %>
+        <% if @request.user == current_user && @request.accepted_bid_id.nil? %>
+          <%= link_to "Accept This Bid", edit_request_offer_path(@request, @offer), class: "btn btn-blue" %>
+        <% else %>
+          <h3>Another bid had already been accepted for this request.</h3>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,2 +1,6 @@
-<h1>Offers#edit</h1>
-<p>Find me in app/views/offers/edit.html.erb</p>
+<div class="container">
+  <h1>Edit Offer</h1>
+  <%= render "layouts/new_offer_form" %>
+  <%= link_to "Delete Offer", request_offer_path(@request, @offer),
+      method: :delete, :data => {:confirm => 'Are you sure you want to delete this offer?'} %>
+</div>
