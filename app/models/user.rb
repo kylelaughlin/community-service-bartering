@@ -14,7 +14,7 @@
 #  avatar_content_type :string
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
-#  credits             :decimal(, )      default(0.0)
+#  credits             :integer          default(0)
 #
 # Indexes
 #

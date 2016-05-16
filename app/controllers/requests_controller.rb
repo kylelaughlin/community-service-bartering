@@ -25,8 +25,10 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @user = @request.user
     @images = @request.request_images
-    @offer= Offer.find(@request.accepted_offer_id)
-    @offer_user = @offer.user
+    if @request.accepted_offer_id
+      @offer= Offer.find(@request.accepted_offer_id)
+      @offer_user = @offer.user
+    end
   end
 
   def index

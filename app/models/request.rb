@@ -8,7 +8,7 @@
 #  user_id            :integer          not null
 #  accepted_offer_id  :integer
 #  advertised_credits :integer
-#  accepted_credits   :decimal(16, 2)
+#  accepted_credits   :integer
 #  completed          :boolean          default(FALSE)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
@@ -40,8 +40,10 @@ class Request < ActiveRecord::Base
     current_user.save
     offer.completed = true
     offer.save
+    byebug
     offer_user.credits += self.accepted_credits
     offer_user.save
+
   end
 
 end

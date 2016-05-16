@@ -13,7 +13,7 @@
   </fieldset>
   <fieldset class="form-group">
     <%= f.label :proposed_hours %>
-    <%= f.number_field :proposed_hours, class: "form-control", min: 0, :step => 'any' %>
+    <%= f.number_field :proposed_hours, class: "form-control", min: 0%>
   </fieldset>
   <div>
     <%= f.submit ( f.object.new_record? ? "Create Offer" : "Update Offer"), class: "btn btn-blue" %>

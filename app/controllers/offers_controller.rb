@@ -6,6 +6,7 @@ class OffersController < ApplicationController
 
   def create
     @request = Request.find(params[:request_id])
+    byebug
     @offer = @request.offers.new(offer_params)
     if @offer.save
       redirect_to request_offer_path(@request, @offer), notice: "Offer Submitted Successfully"
