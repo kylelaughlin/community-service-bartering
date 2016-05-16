@@ -21,6 +21,7 @@ class RequestImage < ActiveRecord::Base
                     styles: { medium: "300x300>", thumb: "100x100>" },
                     default_url: "/images/:style/missing.png",
                     storage: :s3,
+                    source_file_options: { all:     '-auto-orient' },
                     s3_credentials: {access_key_id: ENV["AWS_ACCESS_KEY_ID"],
                                      secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]},
                     bucket: ENV["S3_BUCKET_NAME"]

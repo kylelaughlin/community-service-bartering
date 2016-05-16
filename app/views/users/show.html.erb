@@ -11,6 +11,9 @@
         <div class="requests-header text-center">
           <h2 class="no-spacing">Open Requests</h2>
         </div>
+        <div class="text-center">
+          <%= link_to "New Request", new_request_path, class: "btn btn-blue" %>
+        </div>
         <% @requests.each do |request| %>
           <%= render "layouts/request_summary", :request => request %>
         <% end %>
