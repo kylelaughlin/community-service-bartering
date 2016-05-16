@@ -9,6 +9,7 @@
 #  request_id     :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  accepted       :boolean          default(FALSE)
 #
 
 class Offer < ActiveRecord::Base
