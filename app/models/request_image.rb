@@ -18,7 +18,7 @@ class RequestImage < ActiveRecord::Base
 
   # Attached file through paperclip with AWS S3 storage
   has_attached_file :image,
-                    styles: { medium: "300x300>", thumb: "100x100>" },
+                    styles: { medium: "300x300>", thumb: "100x100>", large: "600x600" },
                     default_url: "/images/:style/missing.png",
                     storage: :s3,
                     source_file_options: { all:     '-auto-orient' },

@@ -13,7 +13,7 @@
     </div>
     <div class="col-sm-4 text-center">
       <% if request.request_images.first %>
-        <%= image_tag request.request_images.first.image.url, class: "summary-image" %>
+        <%= image_tag request.request_images.first.image.url(:medium), class: "summary-image" %>
       <% else %>
         <%= image_tag "no_image.png", class: "summary-no-image" %>
       <% end %>
