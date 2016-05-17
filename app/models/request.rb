@@ -27,6 +27,8 @@ class Request < ActiveRecord::Base
   has_many :request_images, :dependent => :destroy
   has_many :offers, :dependent => :destroy
 
+  default_scope {order('created_at DESC')}
+
   accepts_nested_attributes_for :request_images, :reject_if => lambda { |t| t['request_image'].nil? }
 
   # Facilitates the updating of records upon request completion

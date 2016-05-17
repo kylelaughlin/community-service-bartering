@@ -34,7 +34,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all
+    @requests = Request.where(:completed => false)
   end
 
   def edit
