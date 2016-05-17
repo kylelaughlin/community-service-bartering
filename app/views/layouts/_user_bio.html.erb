@@ -1,5 +1,7 @@
 <div class="bio-container">
-  <%= image_tag @user.avatar.url(:medium), class: "bio-image" %>
+  <div class="bio-image-wrapper">
+    <%= image_tag @user.avatar.url(:medium), class: "bio-image" %>
+  </div>
   <div class="bio-top"></div>
   <h3 class="bio-name"><%=@user.first_name%> <%=@user.last_name%></h3>
   <h6 class="bio-name"><%=@user.email%></h6>
