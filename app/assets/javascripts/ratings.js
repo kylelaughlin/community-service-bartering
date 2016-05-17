@@ -50,7 +50,7 @@ $(function() {
       }
     );
 
-    $("#star-1").tap(
+    $("#star-1").on("tap",
       function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
         $(this).addClass("star-selected");
@@ -66,7 +66,7 @@ $(function() {
       }
     );
 
-    $("#star-2").tap(
+    $("#star-2").on("tap",
       function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
         $("#star-1, #star-2").addClass("star-selected");
@@ -82,7 +82,7 @@ $(function() {
       }
     );
 
-    $("#star-3").tap(
+    $("#star-3").on("tap",
       function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
         $("#star-1, #star-2, #star-3").addClass("star-selected");
@@ -98,7 +98,7 @@ $(function() {
       }
     );
 
-    $("#star-4").tap(
+    $("#star-4").on("tap",
       function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
         $("#star-1, #star-2, #star-3, #star-4").addClass("star-selected");
@@ -113,7 +113,7 @@ $(function() {
       }
     );
 
-    $("#star-5").tap(
+    $("#star-5").on("tap",
       function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").addClass("star-selected");
         $("#rating_rating").val(5);
