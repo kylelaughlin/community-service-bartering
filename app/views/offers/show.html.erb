@@ -4,7 +4,9 @@
     <div class="col-md-9">
       <div class="row">
         <div class="col-xs-8 col-sm-10 col-md-4">
-          <%= render "layouts/user_with_ratings", :@user => @user %>
+          <div class="thin-border-wrapper">
+            <%= render "layouts/user_with_ratings", :@user => @user %>
+          </div>
         </div>
       </div>
       <p> Offered on: <%=@offer.created_at.strftime("%m-%d-%Y")%></p>
