@@ -23,16 +23,17 @@
 }
 
 .bio-image-wrapper {
-  max-height: 100px;
-  overflow: hidden;
-}
-
-.bio-image {
   position: absolute;
   top: 65px;
   left: 15px;
   width: 100px;
   margin: 10px;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.bio-image {
+  width: 100%;
   border-style: solid;
   border-width: thick;
   border-color: #F5F8FA;
