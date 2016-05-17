@@ -7,10 +7,13 @@ class RatingsController < ApplicationController
   end
 
   def create
-    byebug
-  end
-
-  def show
+    @rating = Rating.new(ratings_params)
+    if @rating.save
+      redirect_to user_path(current_user), notice: "Rating Saved"
+    else
+      flash.now[:alert] = "Rating Not Saved"
+      redirect_to user_path(current_user)
+    end
   end
 
   private

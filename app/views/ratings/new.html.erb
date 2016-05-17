@@ -9,20 +9,9 @@
   </div>
   <div class="row">
     <div class="col-md-6 col-md-offset-3 text-center">
-      <div class="grey-wrapper">
-        <h2>How did <%=@offer_user.first_name %> do?</h2>
-        <h1>
-          <span id="star-1" class="hover-cursor">&#9733</span>
-          <span id="star-2" class="hover-cursor">&#9733</span>
-          <span id="star-3" class="hover-cursor">&#9733</span>
-          <span id="star-4" class="hover-cursor">&#9733</span>
-          <span id="star-5" class="hover-cursor">&#9733</span>
-        </h1>
-        <%= form_for ([@offer_user, @rating]) do |f| %>
-          <%= f.hidden_field :rating, :value => 0 %>
-          <%= f.submit "Submit", class: "btn btn-blue"%>
-        <% end %>
-      </div>
+      <%= render "layouts/ratings", :@user => @user,
+                                    :@offer_user => @offer_user,
+                                    :@rating => @rating %>
     </div>
   </div>
 
