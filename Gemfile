@@ -30,6 +30,8 @@ gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '< 2.0'
 # Figaro Handling ENV variables
 gem 'figaro'
+# Static asset serving and logging for Heroku
+gem 'rails_12factor'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -53,3 +55,5 @@ group :development do
   # Add comments to models showing schema for each model
   gem 'annotate'
 end
+
+ruby "2.3.0"
