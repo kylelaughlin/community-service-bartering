@@ -50,13 +50,11 @@ $(function() {
       }
     );
 
-    $("#star-1").on("tap",
-      function(){
-        $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
-        $(this).addClass("star-selected");
-        $("#rating_rating").val(1);
-      }
-    );
+    $("#star-1").on({ 'touchstart' : function(){
+      $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
+      $(this).addClass("star-selected");
+      $("#rating_rating").val(1);
+    } });
 
     $("#star-2").click(
       function(){
@@ -66,13 +64,11 @@ $(function() {
       }
     );
 
-    $("#star-2").on("tap",
-      function(){
+    $("#star-2").on({ 'touchstart' : function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
         $("#star-1, #star-2").addClass("star-selected");
         $("#rating_rating").val(2);
-      }
-    );
+    } });
 
     $("#star-3").click(
       function(){
@@ -82,13 +78,11 @@ $(function() {
       }
     );
 
-    $("#star-3").on("tap",
-      function(){
+    $("#star-3").on({ 'touchstart' : function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
         $("#star-1, #star-2, #star-3").addClass("star-selected");
         $("#rating_rating").val(3);
-      }
-    );
+    } });
 
     $("#star-4").click(
       function(){
@@ -98,13 +92,11 @@ $(function() {
       }
     );
 
-    $("#star-4").on("tap",
-      function(){
+    $("#star-4").on({ 'touchstart' : function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").removeClass("star-selected");
         $("#star-1, #star-2, #star-3, #star-4").addClass("star-selected");
         $("#rating_rating").val(4);
-      }
-    );
+    } });
 
     $("#star-5").click(
       function(){
@@ -113,11 +105,9 @@ $(function() {
       }
     );
 
-    $("#star-5").on("tap",
-      function(){
+    $("#star-5").on({ 'touchstart' : function(){
         $("#star-1, #star-2, #star-3, #star-4, #star-5").addClass("star-selected");
         $("#rating_rating").val(5);
-      }
-    );
+    } });
 
 });
