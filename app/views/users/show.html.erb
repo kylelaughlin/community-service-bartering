@@ -6,7 +6,9 @@
         <h3>Time Credits Available: <%=@user.credits%></h3>
       </div>
       <%= render "layouts/large_rating", :@rating => @rating %>
-      <%= render "layouts/user_offers", :@offers => @offers %>
+      <% if !@offers.empty? %>
+        <%= render "layouts/user_offers", :@offers => @offers %>
+      <% end %>
     </div>
     <div class="col-md-8">
       <div class="thin-border-wrapper">
