@@ -124,3 +124,20 @@ body {
 .inline {
   display: inline;
 }
+
+.flash {
+  padding: 5px;
+  width: 30%;
+  margin: auto;
+  font-size: 1.2em;
+}
+
+.flash-notice {
+  background-color: #008542;
+  color: #FFF;
+}
+
+.flash-alert {
+  background-color: #C3122F;
+  color: #FFF;
+}
