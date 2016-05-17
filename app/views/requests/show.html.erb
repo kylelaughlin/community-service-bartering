@@ -3,10 +3,13 @@
     <div class="col-md-3">
       <%= render "layouts/author_summary", :@user => @user %>
       <% if @user == current_user %>
-        <div class="thin-border-wrapper">
-          <h3>Bids</h3>
+        <div class="thin-border-wrapper padding-5">
+          <h3>Offers</h3>
           <% @offers.each do |o| %>
             <%= link_to o.request.title, request_offer_path(o.request, o) %>
+          <% end %>
+          <% if @offers.blank? %>
+            <p class="inline">No offers submitted</p>
           <% end %>
         </div>
       <% end %>
