@@ -4,6 +4,13 @@
   </div>
   <div class="col-xs-9">
     <%= link_to "#{@user.first_name}", user_path(@user.id), class: "link-large"%>
-    <p>Ratings</p>
+    <h5>
+      <% (0...@rating).each do |i| %>
+        <span class="star-selected">&#9733</span>
+      <% end %>
+      <% if @rating == -1 %>
+        <span class="small-text">No Ratings Given</span>
+      <% end %>
+    </h5>
   </div>
 </div>

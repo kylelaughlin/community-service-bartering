@@ -26,6 +26,7 @@ class RequestsController < ApplicationController
     @user = @request.user
     @offers = Offer.where(request_id: @request.id)
     @images = @request.request_images
+    @rating = @user.rating_calculation
     if @request.accepted_offer_id
       @offer= Offer.find(@request.accepted_offer_id)
       @offer_user = @offer.user

@@ -26,6 +26,7 @@ skip_before_action :require_login, only: [:index]
     @request = Request.find(params[:request_id])
     @offer = Offer.find(params[:id])
     @user = User.find(@offer.user_id)
+    @rating = @user.rating_calculation
     offer_permission?
   end
 
