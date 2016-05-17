@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def user_allowed?
     if @user != current_user
-      redirect_to user_path(session[:user_id]), alert: "Can't Edit Others Stuff"
+      redirect_to user_path(session[:user_id]), alert: "Can't Access Other User Information"
     end
   end
 
