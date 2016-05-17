@@ -68,6 +68,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @offer = Offer.find(@request.accepted_offer_id)
     @offer_user = @offer.user
+    byebug
     @request.completed_request(@offer, @offer_user, current_user)
     redirect_to new_user_rating_path(current_user), notice: "Request Completed"
   end

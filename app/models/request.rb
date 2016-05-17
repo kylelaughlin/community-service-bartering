@@ -38,6 +38,7 @@ class Request < ActiveRecord::Base
   def completed_request(offer, offer_user, current_user)
     self.completed = true
     self.save
+    byebug
     current_user.credits -= self.accepted_credits
     current_user.save
     offer.completed = true
