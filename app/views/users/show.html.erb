@@ -5,25 +5,8 @@
       <div class="thin-border-wrapper padding-5">
         <h3>Time Credits Available: <%=@user.credits%></h3>
       </div>
-      <div class="thin-border-wrapper padding-5">
-        <h3>Community Rating:
-          <% (0...@rating).each do |i| %>
-            <span class="star-selected">&#9733</span>
-          <% end %>
-          <% if @rating == -1 %>
-            <span class="small-text">No Ratings Given</span>
-          <% end %>
-        </h3>
-      </div>
-      <div class="thin-border-wrapper padding-5">
-        <% @offers.each do |o| %>
-          <h3>My Open Offers</h3>
-          <h4><%= link_to "#{o.request.title} #{o.created_at.strftime("%m-%d-%Y")}",
-                  request_offer_path(o.request, o) %>
-          <p class="accepted"><%= "Accepted" if o.accepted %></p>
-          </h4>
-        <% end %>
-      </div>
+      <%= render "layouts/large_rating", :@rating => @rating %>
+      <%= render "layouts/user_offers", :@offers => @offers %>
     </div>
     <div class="col-md-8">
       <div class="thin-border-wrapper">
