@@ -26,7 +26,6 @@ class Offer < ActiveRecord::Base
   #
   # +request: a Request Object representing the request for which a bid was accepted
   def accepted_offer(request)
-    byebug
     self.accepted = true
     request.accepted_offer_id = self.id
     request.accepted_credits = self.proposed_hours
