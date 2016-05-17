@@ -9,9 +9,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    user_allowed?
     @requests = Request.where(user: @user, completed: false)
     @offers = Offer.where(user: @user, completed: false).includes(:request)
-    user_allowed?
+    @rating = @user.rating_calculation
   end
 
   def new

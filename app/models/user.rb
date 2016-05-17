@@ -49,7 +49,29 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  # Checks that a user has enough time credits to accept an offers
+  #
+  # +proposed_hours: an integer representing the number of time credits for an offers
+  #
+  # Returns a boolean, true if the user has enough time credits, otherwise false
   def credit_check(proposed_hours)
     credits >= proposed_hours
   end
+
+  # Calculates the average rating for a user rounded to nearest integer
+  #
+  # Returns an integer representing the users average rating
+  def rating_calculation
+    ratings_collection = Rating.where(user_id: self.id)
+    average = -1
+    if !ratings_collection.empty?
+      sum = 0
+      ratings_collection.each do |r|
+        sum += r.rating
+      end
+      average = (sum.to_f / ratings_collection.count).round
+    end
+    average
+  end
+
 end
