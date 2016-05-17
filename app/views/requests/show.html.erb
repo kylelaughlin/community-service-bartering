@@ -17,7 +17,7 @@
         <div class="grey-wrapper padding-5 text-center">
           <h2>Accepted Offer from <%=@offer_user.first_name %></h2>
           <h4>Is the work done?</h4>
-          <%= link_to "Yes, #{@offer_user.first_name} completed the request", completed_request_path(:id => @request.id)%>
+          <%= link_to "Yes, #{@offer_user.first_name} completed the request", new_user_rating_path(@offer_user, request_user_id: @user.id)  %>
         </div>
       <% end %>
 
