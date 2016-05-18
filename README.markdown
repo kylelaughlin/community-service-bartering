@@ -44,35 +44,21 @@ rake db:migrate
 ```
 
 Now the application is ready to be run locally.  To start the rails server, use
-the ``` rails server``` or the short form ```rails s``` command.
+the ``` rails server``` or the short form ```rails s``` commands.  The application
+can then be utilized in the browser at localhost:3000.
 
+##Testing
 
+This application utilizes Minitest as it's test suite. Running tests from the console
+is acheived by simply running the ```rake``` command.
 
-== README
+##Utilized Gems
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gems added to the default rails gems include the following
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+[sorcery] (https://github.com/NoamB/sorcery) - handles user authentication
+[figaro] (https://github.com/laserlemon/figaro) - keeps configuration access keys, passwords and other valuable information from being posted to git
+[paperclip] (https://github.com/thoughtbot/paperclip) - file uploading
+[aws-sdk] (https://github.com/aws/aws-sdk-rails) - integrate AWS Services
+[bootstrap-sass] (https://github.com/twbs/bootstrap-sass) - sass-powered version of bootsrtap 3
+[rails_12factor] (https://github.com/heroku/rails_12factor) - configuration for heroku
