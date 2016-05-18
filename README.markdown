@@ -4,7 +4,7 @@ Neighborly is a web application that allows people to connect to find help right
 
 A time credit is earned for ever hour a user spends helping another with their request. Once a person helps with a request, the agreed upon time credit is transferred from the requesting user to the offering user. This helps create a stronger community allowing people put their skills to use to get help in return.  
 
-Neighborly is built on the Ruby (2.3.0) language, Ruby on Rails framework, postgresql database, and the Activerecord ORM.
+Neighborly is built on the Ruby (2.3.0) language, Ruby on Rails framework, postgresql database, and the Activerecord ORM framework.
 
 ##Getting Started
 
