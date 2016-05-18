@@ -60,6 +60,7 @@ skip_before_action :require_login, only: [:index]
     @offer = Offer.find(params[:id])
     @user = @request.user
     user_allowed?
+    @rating = @user.rating_calculation
     if @user.credit_check(@offer.proposed_hours)
       @offer.accepted_offer(@request)
       redirect_to request_path(@request), notice: "Offer Accepted"

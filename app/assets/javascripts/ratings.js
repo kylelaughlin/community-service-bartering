@@ -1,7 +1,10 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-$(function() {
+var ready;
+
+ready = function(){
+
     $("#star-1").hover(
       function(){
         $(this).addClass("star-hover");
@@ -72,4 +75,7 @@ $(function() {
         $("#rating_rating").val(5);
     } });
 
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

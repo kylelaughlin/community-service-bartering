@@ -65,12 +65,12 @@ class RequestsController < ApplicationController
   end
 
   def completed
+    byebug
     @request = Request.find(params[:id])
     @offer = Offer.find(@request.accepted_offer_id)
     @offer_user = @offer.user
-    byebug
     @request.completed_request(@offer, @offer_user, current_user)
-    redirect_to new_user_rating_path(current_user), notice: "Request Completed"
+    redirect_to new_user_rating_path(:request_user_id => current_user.id, :user_id => @offer_user.id), notice: "Request Completed"
   end
 
   private
