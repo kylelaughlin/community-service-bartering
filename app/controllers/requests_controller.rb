@@ -65,7 +65,6 @@ class RequestsController < ApplicationController
   end
 
   def completed
-    byebug
     @request = Request.find(params[:id])
     @offer = Offer.find(@request.accepted_offer_id)
     @offer_user = @offer.user

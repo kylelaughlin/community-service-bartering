@@ -12,7 +12,7 @@ people put their skills to use to get help in return.
 
 Neighborly is built on the Ruby (2.3.0) language, Ruby on Rails framework, postgresql database, and the Activerecord ORM.
 
-Getting Started
+##Getting Started
 
 Below are the steps to get Neighborly running locally.
 
@@ -23,16 +23,30 @@ clone utilizing SSH.
 git clone git@github.com:kylelaughlin/community-service-bartering.git
 ```
 
-The “Getting Started” section outlines the process of getting the app installed and usable for a developer. I define ‘usable’ in this context as able to login to the application and access all of the functionality available.
+Next, install gems by running:
 
-Information you might want to include is:
+```
+bundle installed
+```
 
-A detailed spin-up process. This should include:
-Instructions on installing any software the application is dependent on: e.g.: wkhtmltopdf, PostgreSQL, XQuartz.
-Instructions on running the app. For rails apps you’ll want to include the rake db:create db:migrate db:seed process here, as well as instructions on starting a server (e.g. are we using pow, or just the default `rails s`)
-A list of credentials that can be used to log in with each user type in the system and ideally the URL that a developer can log in from.
-Any information about subdomains in the app (e.g.: api.myapp.dev/)
-When writing instructions pretend you’re writing them for someone who knows next to nothing about developing in the framework/language your application uses.
+Setting up the postgresql database takes two steps:
+
+1. Create the database:
+
+```
+rake db:create
+```
+
+2. Run migrations
+
+```
+rake db:migrate
+```
+
+Now the application is ready to be run locally.  To start the rails server, use
+the ``` rails server``` or the short form ```rails s``` command.
+
+
 
 == README
 
