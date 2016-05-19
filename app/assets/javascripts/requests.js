@@ -8,4 +8,5 @@ $(function() {
 });
 
 //index.js.erb (same folder as index.html.erb)
-$("#bands").html("<%= escape_javascript(render("request_summary")) %>");
+var request_summary = "request_summary"
+$("#bands").html("<%= escape_javascript(render(request_summary)) %>");
