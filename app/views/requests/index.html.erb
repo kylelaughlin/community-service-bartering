@@ -9,7 +9,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8" id="request-list">
       <h1>Community Requests</h1>
       <% @requests.each do |request| %>
         <%= render "layouts/request_summary", :request => request %>
