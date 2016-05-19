@@ -47,4 +47,18 @@ class Request < ActiveRecord::Base
     offer_user.save
   end
 
+  # Returns records with titles matching a search input
+  #
+  # +search: a string representing the user inputted search query
+  #
+  # Returns an array of request objects with titles matching the search string
+  def self.search(search)
+  if search
+    self.all.where('(title LIKE ? OR description LIKE ?) AND completed = ?',
+                    "%#{search}%", "%#{search}%", "false")
+  else
+    self.all.where(:completed => "false")
+  end
+end
+
 end

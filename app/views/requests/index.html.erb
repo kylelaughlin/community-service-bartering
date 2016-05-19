@@ -1,6 +1,16 @@
 <div class="container">
-  <h1>Community Requests</h1>
-  <% @requests.each do |request| %>
-    <%= render "layouts/request_summary", :request => request %>
-  <% end %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= form_tag requests_path, :method => "get", :id => "search_form" do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <h1>Community Requests</h1>
+      <% @requests.each do |request| %>
+        <%= render "layouts/request_summary", :request => request %>
+      <% end %>
+    </div>
+  </div>
 </div>
